@@ -6,6 +6,9 @@
 
 # YOUR CODE HERE
 
+def f1(arg1, arg2):
+    return arg1 + arg2
+
 print(f1(1, 2))
 
 # Write a function f2 that takes any number of integer arguments and prints the
@@ -13,6 +16,12 @@ print(f1(1, 2))
 # Note: Google for "python arbitrary arguments" and look for "*args"
 
 # YOUR CODE HERE
+
+def f2(*arg):
+    sum = 0
+    for arg in arg:
+        sum += arg
+    return sum
 
 print(f2(1))                    # Should print 1
 print(f2(1, 3))                 # Should print 4
@@ -31,6 +40,9 @@ print(f2(a))    # Should print 22
 
 # YOUR CODE HERE
 
+def f3(arg1, arg2=1):
+    return arg1 + arg2
+
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
 
@@ -44,6 +56,10 @@ print(f3(8))     # Should print 9
 # Note: Google "python keyword arguments".
 
 # YOUR CODE HERE
+
+def f4(**kwargs):
+    for k,v in kwargs.items():
+        print(f"key: {k}, value: {v}")
 
 # Should print
 # key: a, value: 12
@@ -60,6 +76,10 @@ d = {
     "monster": "goblin",
     "hp": 3
 }
+
+def f4(dic):
+    for k,v in dic.items():
+        print(f"key: {k}, value: {v}")
 
 # How do you have to modify the f4 call below to make this work?
 f4(d)
