@@ -34,8 +34,8 @@ from datetime import datetime
 date_info = sys.argv
 
 def calendar_render(info):
-  month = int(info[1]) if len(info) == 2 else datetime.now().month
-  year = int(info[2]) if len(info) == 3 else datetime.now().year
+  month = int(info[1]) if len(info) > 1 else datetime.now().month
+  year = int(info[2]) if len(info) > 2 else datetime.now().year
   print(calendar.month(year, month))
 
 calendar_render(date_info) 
